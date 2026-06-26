@@ -1,0 +1,9 @@
+# Her satır bir test girdisidir.
+# ε boş string anlamına gelir.
+
+ab
+aabb
+aaabbb
+aab
+abb
+ε

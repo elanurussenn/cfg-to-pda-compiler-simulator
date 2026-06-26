@@ -1,0 +1,12 @@
+{
+  "description": "L = { a^n b^n | n >= 1 }",
+  "nonterminals": ["S"],
+  "terminals": ["a", "b"],
+  "start_symbol": "S",
+  "productions": {
+    "S": [
+      ["a", "S", "b"],
+      ["a", "b"]
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+    "name": "CFG'den otomatik üretilen PDA",
+    "states": [
+        "q_start",
+        "q_loop",
+        "q_accept"
+    ],
+    "input_symbols": [
+        "a",
+        "b"
+    ],
+    "stack_symbols": [
+        "$",
+        "S",
+        "a",
+        "b"
+    ],
+    "start_state": "q_start",
+    "start_stack_symbol": "$",
+    "accept_states": [
+        "q_accept"
+    ],
+    "transitions": [
+        {
+            "from": "q_start",
+            "input": "ε",
+            "pop": "$",
+            "to": "q_loop",
+            "push": [
+                "$",
+                "S"
+            ],
+            "label": "Başlangıç: $ üstüne S koy"
+        },
+        {
+            "from": "q_loop",
+            "input": "ε",
+            "pop": "S",
+            "to": "q_loop",
+            "push": [
+                "b",
+                "S",
+                "a"
+            ],
+            "label": "Üretim uygula: S → aSb"
+        },
+        {
+            "from": "q_loop",
+            "input": "ε",
+            "pop": "S",
+            "to": "q_loop",
+            "push": [
+                "b",
+                "a"
+            ],
+            "label": "Üretim uygula: S → ab"
+        },
+        {
+            "from": "q_loop",
+            "input": "a",
+            "pop": "a",
+            "to": "q_loop",
+            "push": [],
+            "label": "Terminal eşleştir: a oku, yığından a sil"
+        },
+        {
+            "from": "q_loop",
+            "input": "b",
+            "pop": "b",
+            "to": "q_loop",
+            "push": [],
+            "label": "Terminal eşleştir: b oku, yığından b sil"
+        },
+        {
+            "from": "q_loop",
+            "input": "ε",
+            "pop": "$",
+            "to": "q_accept",
+            "push": [],
+            "label": "Kabul: giriş bitti, yığındaki $ silindi",
+            "require_input_end": true
+        }
+    ]
+}

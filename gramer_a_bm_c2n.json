@@ -1,0 +1,33 @@
+{
+    "description": "L = { a^n b^m c^(2n) | m,n >= 0 }",
+    "nonterminals": [
+        "S",
+        "B"
+    ],
+    "terminals": [
+        "a",
+        "b",
+        "c"
+    ],
+    "start_symbol": "S",
+    "productions": {
+        "S": [
+            [
+                "a",
+                "S",
+                "c",
+                "c"
+            ],
+            [
+                "B"
+            ]
+        ],
+        "B": [
+            [
+                "b",
+                "B"
+            ],
+            []
+        ]
+    }
+}
